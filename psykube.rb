@@ -8,7 +8,7 @@ class Psykube < Formula
   head "https://github.com/commercialtribe/psykube.git", branch: "master"
   url "https://github.com/commercialtribe/psykube.git", using: :git, tag: "v#{VERSION}"
 
-  depends_on "crystal" => :build
+  depends_on "crystal-lang" => :build
 
   def install
     system "shards install"
