@@ -12,7 +12,7 @@ class Psykube < Formula
 
   def install
     system "shards install"
-    system "crystal build"
+    system "crystal build ./src/psykube.cr"
     bin.install "psykube"
   end
   
