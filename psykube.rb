@@ -11,7 +11,7 @@ class Psykube < Formula
   depends_on 'crystal-lang' => :build
 
   def install
-    ENV["TRAVIS_TAG"] = VERSION unless build.head?
+    ENV["TRAVIS_TAG"] = "v#{VERSION}" unless build.head?
     system 'make build'
     bin.install "psykube"
   end
