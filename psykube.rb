@@ -1,6 +1,6 @@
 require "formula"
 
-class GitGet < Formula
+class PsyKube < Formula
   VERSION = "0.1.0-beta1"
 
   version VERSION
