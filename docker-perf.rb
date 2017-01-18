@@ -6,7 +6,7 @@ class DockerPerf < Formula
   depends_on 'docker'
 
   def install
-    Dir.cd "~/Library/Containers/com.docker.docker/Data/database/" do
+    Dir.chdir "~/Library/Containers/com.docker.docker/Data/database/" do
       filename = "com.docker.driver.amd64-linux/disk/full-sync-on-flush"
       system 'git reset --hard'
       File.open(filename, "w"){ |file| file.write "true\n" }
