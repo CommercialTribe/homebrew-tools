@@ -2,6 +2,7 @@ require "net/http"
 require "formula"
 
 class DockerPerf < Formula
+  url "https://github.com/CommercialTribe/homebrew-tools/edit/master/docker-perf.rb"
   depends_on 'docker'
 
   def install
