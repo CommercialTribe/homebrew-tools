@@ -1,7 +1,7 @@
 require "formula"
 
 class Psykube < Formula
-  VERSION = "0.1.0-beta9"
+  VERSION = "0.1.0-beta11"
   
   version VERSION
   homepage 'https://github.com/commercialtribe/psykube'
