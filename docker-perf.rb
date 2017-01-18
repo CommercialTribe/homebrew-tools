@@ -8,7 +8,7 @@ class DockerPerf < Formula
     Dir.cd "~/Library/Containers/com.docker.docker/Data/database/" do
       filename = "com.docker.driver.amd64-linux/disk/full-sync-on-flush"
       system 'git reset --hard'
-      File.open(filename, "a"){ |file| file.write "true\n" }
+      File.open(filename, "w"){ |file| file.write "true\n" }
       system "git add #{filename}"
       system 'git commit -s -m "Disable flushing"'
     end
