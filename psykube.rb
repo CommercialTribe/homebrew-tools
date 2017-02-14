@@ -14,7 +14,6 @@ class Psykube < Formula
   depends_on 'crystal-lang' => :build
   depends_on 'kubernetes-cli'
   depends_on 'bdw-gc'
-  depends_on 'docker' => :recommended
 
   def install
     ENV["TRAVIS_TAG"] = TAG unless build.head?
