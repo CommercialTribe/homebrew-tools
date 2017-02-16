@@ -5,7 +5,7 @@ class KubeShell < Formula
   depends_on 'kubernetes-cli'
 
   def install
-    File.open("docker-perf", "w") do |file|
+    File.open("kube-shell", "w") do |file|
       file.write <<-BASH
 #!/bin/bash
 #!/usr/bin/env bash
@@ -29,6 +29,6 @@ cmd kubectl --namespace=$namespace run $name -it --image=$image --command -- $co
 cmd kubectl --namespace=$namespace delete deployment $name --now
 BASH
     end
-    bin.install "docker-perf"
+    bin.install "kube-shell"
   end
 end
