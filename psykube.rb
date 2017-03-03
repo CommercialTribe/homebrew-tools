@@ -13,11 +13,15 @@ class Psykube < Formula
 
   depends_on 'crystal-lang' => :build
   depends_on 'openssl' => :build
-  depends_on 'npm' => :build 
+  depends_on 'npm' => :build
   depends_on 'kubernetes-cli'
   depends_on 'bdw-gc'
 
   def install
+    bin = File.join(prefix, "bin")
+    mkdir_p bin
+    ln_s "/usr/local/lib/node_modules/npm/bin/npm-cli.js", File.join(bin, "npm")
+    ENV["PATH"] = "#{bin}:#{ENV["PATH"]}"
     ENV["TRAVIS_TAG"] = TAG unless build.head?
     system 'shards build --release'
     bin.install "bin/psykube"
