@@ -4,7 +4,7 @@ require "language/node"
 
 class Psykube < Formula
   LATEST_RELEASE = JSON.parse(Net::HTTP.get(URI("https://api.github.com/repos/commercialtribe/psykube/releases/latest")))
-  FALLBACK_TAG = "v0.9.0-rc2"
+  FALLBACK_TAG = "v1.5.2.7"
   TAG = LATEST_RELEASE["tag_name"] || FALLBACK_TAG
 
   version TAG.sub /^v/, ''
